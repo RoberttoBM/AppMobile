@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-card class="welcome-card">
+    <img src="/assets/libros.jpg" alt="" />
+    <ion-card-header>
+      <ion-label>Institución Educativa Privada</ion-label>
+      <ion-card-title>FRACTAL</ion-card-title>
+      <ion-label>Academia - Colegio</ion-label>
+    </ion-card-header>
+  </ion-card>
+</ion-header>
+
+<ion-content >
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input formControlName="Usuario" type="text" placeholder="Usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input formControlName="Contraseña" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <ion-button routerLink="/tab1" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
+      expands="block">Iniciar Sesión</ion-button>
+  </form>
+</ion-content>
+
+
