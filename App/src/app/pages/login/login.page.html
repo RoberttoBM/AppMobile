@@ -10,14 +10,14 @@
 </ion-header>
 
 <ion-content >
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" #form="ngForm" >
     <ion-item>
       <ion-input formControlName="Usuario" type="text" placeholder="Usuario"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input formControlName="Contraseña" type="password" placeholder="Contraseña"></ion-input>
     </ion-item>
-    <ion-button routerLink="/tab1" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
+    <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
       expands="block">Iniciar Sesión</ion-button>
   </form>
 </ion-content>

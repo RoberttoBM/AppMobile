@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
+
 ];
 @NgModule({
   imports: [

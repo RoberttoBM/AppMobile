@@ -16,7 +16,12 @@ export class NotasService {
   getAll():Observable<any>{
 
     // return this.http.get('http://localhost:3000/notas/read/1');
-    return this.http.get(`${this.url}/notas/read/1`);
+    return this.http.get(`${this.url}/notas/read`);
   }
+  
+  login(usr, pwd): Observable<any> {
+    return this.http.get(`${this.url}/login/${usr}/${pwd}`);
+  }
+  
 
 }
