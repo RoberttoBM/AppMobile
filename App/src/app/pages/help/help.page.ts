@@ -1,33 +1,15 @@
-/* import { Component, OnInit } from '@angular/core';
-import { HelpService } from '../../';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-empresa',
-  templateUrl: './empresa.page.html',
-  styleUrls: ['./empresa.page.scss'],
+  selector: 'app-help',
+  templateUrl: './help.page.html',
+  styleUrls: ['./help.page.scss'],
 })
-export class HelpPage implements OnInit {
+export class HELPPage implements OnInit {
 
-  HELP: Help = new Help();
-
-  constructor(private helpService: HelpService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddteamPage');
-  }
-
-  guardarEmpresa() {
-    console.log(this.HELP);
-    this.helpService.saveEmpresa(this.HELP).then((result) => {
-      console.log(result);
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
-
 }
- */

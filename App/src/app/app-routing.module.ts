@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'contactos', loadChildren: './pages/contactos/contactos.module#ContactosPageModule' },
   { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },  { path: 'help', loadChildren: './pages/help/help.module#HELPPageModule' },
+
 
 ];
 @NgModule({

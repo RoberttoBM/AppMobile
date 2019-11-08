@@ -11,11 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotasPageModule } from './pages/notas/notas.module';
 import { AsistenciasPageModule } from './pages/asistencias/asistencias.module';
+import { LoginPageModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [NotasPageModule, AsistenciasPageModule, BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [LoginPageModule, NotasPageModule, AsistenciasPageModule, BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
