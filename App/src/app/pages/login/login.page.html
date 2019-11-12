@@ -1,6 +1,5 @@
 <ion-header>
   <ion-card class="welcome-card">
-    <img src="/assets/libros.jpg" alt="" />
     <ion-card-header>
       <ion-label>Institución Educativa Privada</ion-label>
       <ion-card-title>FRACTAL</ion-card-title>
@@ -9,17 +8,33 @@
   </ion-card>
 </ion-header>
 
-<ion-content >
-  <form [formGroup]="loginForm" #form="ngForm" >
-    <ion-item>
-      <ion-input formControlName="Usuario" type="text" placeholder="Usuario"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input formControlName="Contraseña" type="password" placeholder="Contraseña"></ion-input>
-    </ion-item>
-    <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
-      expands="block">Iniciar Sesión</ion-button>
-  </form>
+<ion-content>
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <form [formGroup]="loginForm" #form="ngForm">
+
+        <ion-card-header>
+          <ion-card-title>Iniciar Sesión</ion-card-title>
+        </ion-card-header>
+
+        <div text-center padding>
+          <img src="./../../../assets/IconoRB.svg">
+        </div>
+
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="Usuario" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="Contraseña" type="password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
+          expands="block">Iniciar Sesión</ion-button>
+      </form>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-
