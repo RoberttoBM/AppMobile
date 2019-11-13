@@ -10,4 +10,4 @@ import { Help } from './model/help.entity';
   providers: [HelpService],
   exports:[HelpService]
 })
-export class UserModule {}
+export class HelpModule {}

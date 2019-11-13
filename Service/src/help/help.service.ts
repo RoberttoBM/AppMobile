@@ -15,7 +15,7 @@ export class HelpService {
         return this.helpRepository.find();
     }
 
-    async create(help: Help) {
+    async create(help: HelpDTO) {
         let user = this.helpRepository.create(help);
         this.helpRepository.save(user);
     }

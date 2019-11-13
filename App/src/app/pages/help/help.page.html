@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>HELP</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title style="font-weight: bold" text-center="text-center">Consulta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<br>
 
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">N° de DNI</ion-label>
+      <ion-input type="text" required [(ngModel)]="HELP.DNIPER"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Consulta</ion-label>
+      <ion-textarea type="text" required [(ngModel)]="HELP.CONSULTA"></ion-textarea>
+      <br>
+      <br>
+      <br>
+      <br>
+    </ion-item>
+
+  </ion-list>
+  <ion-button color="warning" expand="block" (click)="guardarConsulta()">
+    <strong style="color:rgb(0, 0, 0)">
+      Enviar Consulta
+    </strong>
+  </ion-button>
 </ion-content>

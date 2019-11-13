@@ -15,7 +15,8 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder, public servicio: NotasService,
+    public formBuilder: FormBuilder, 
+    public servicio: NotasService,
     public router: Router,
     private loadingCtrl: LoadingController,
     public alertController: AlertController,
@@ -47,16 +48,21 @@ export class LoginPage implements OnInit {
 
       if (resp !== null) {
         console.log("entro");
+        this.presentLoading();
         this.router.navigateByUrl('/tab1');
+      } else {
+        console.log(":D");   
+        this.presentAlert();
       }
+
     });
   }
 
   async presentAlert() {
-    const alert = await this.alertController.create({
+    const alert = await this.alertController.create({   
       subHeader: "Usuario y/o contraseña incorrecto",
-      message: "Instente de nuevo por favor :)",
-      buttons: ["OK :)"]
+      message: "Intente de nuevo por favor :)",
+      buttons: ["OK"]
     });
 
     await alert.present();
@@ -67,8 +73,8 @@ export class LoginPage implements OnInit {
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Cargando :) ...',
-      duration: 800
+      message: 'Cargando Información ... ',
+      duration: 3000
     });
     await loading.present();
 
@@ -77,7 +83,7 @@ export class LoginPage implements OnInit {
     console.log('Loading dismissed!');
   }
 
-  
+
   public validarAcceso(form: { value: cuenta }) {
     this.presentLoading();
     this.servicio

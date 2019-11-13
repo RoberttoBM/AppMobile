@@ -32,7 +32,7 @@
             <ion-input formControlName="Contraseña" type="password"></ion-input>
           </ion-item>
         </ion-list>
-        <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
+        <ion-button (click)="login()" type="reset" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
           expands="block">Iniciar Sesión</ion-button>
       </form>
     </ion-row>

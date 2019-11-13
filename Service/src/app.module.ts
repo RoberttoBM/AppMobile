@@ -7,6 +7,7 @@ import { NotasModule } from './notas/notas.module';
 import { AsistenciasModule } from './asistencias/asistencias.module';
 import { AuthModule } from './auth/auth.module';
 import { LoginModule } from './login/login.module';
+import { HelpModule } from './help/help.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,7 +18,7 @@ import { LoginModule } from './login/login.module';
     "synchronize": false,
     "logging": true,
     "entities": [__dirname + '/**/**.entity{.ts,.js}']
-  }), UserModule, NotasModule, AsistenciasModule, AuthModule, UserModule, LoginModule],
+  }), UserModule, NotasModule, AsistenciasModule, AuthModule, UserModule, LoginModule, HelpModule],
   controllers: [AppController],
   providers: [AppService],
 })
