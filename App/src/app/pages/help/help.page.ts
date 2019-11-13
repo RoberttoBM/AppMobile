@@ -23,7 +23,7 @@ export class HELPPage implements OnInit {
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Cargando Información ... ',
+      message: 'Enviando Consulta ... ',
       duration: 3000
     });
     await loading.present();
@@ -41,9 +41,10 @@ export class HELPPage implements OnInit {
     console.log(this.HELP);
     this.helpService.saveConsulta(this.HELP).then((result) => {
       console.log(result);
-      this.presentLoading;
     });
+    
   }
+
 
 
 }

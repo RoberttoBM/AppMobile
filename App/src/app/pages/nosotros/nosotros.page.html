@@ -1,48 +1,72 @@
 <ion-header>
-  <ion-toolbar>
-    <!--<ion-buttons slot="start">
-      <ion-back-button defaultHref="/tab1"></ion-back-button>
-    </ion-buttons>-->
-    <ion-title>Desarrolladores de la App</ion-title>
+  <ion-toolbar color="warning">
+    <ion-title style="color:rgb(0, 0, 0)">Desarrolladores:</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="welcome-card">
     <ion-card-header>
-      <ion-avatar>
-        <img src="/assets/chico.svg">
-      </ion-avatar>
-      <ion-card-title>Roberto Borjas Martínez</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-avatar>
-        <img src="/assets/a.svg">
-      </ion-avatar>
-      <ion-card-title>James Casas Chacaliaza</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-
-  <ion-card>
-    <ion-card-header>
-      <ion-avatar>
-        <img src="/assets/hombre.svg">
-      </ion-avatar>
-      <ion-card-title>Arian Sánchez Nolazco</ion-card-title>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="../../../assets/persona.png">
+        </ion-avatar>
+        <ion-label>
+          Roberto Borjas Martínez
+          <h3>Email:</h3>
+          <p>roberto.borjas@vallegrande.edu.pe</p>
+        </ion-label>
+      </ion-item>
     </ion-card-header>
   </ion-card>
 
-
-
-
-
-
-
-
-  <button class="button">
-    <a href="https://wa.me/51934750266.html" class="button">WhatsApp</a>
-  </button>
+  <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="../../../assets/arian.png">
+          </ion-avatar>
+          <ion-label>
+            Arian Sánchez Nolazco
+            <h3>Email:</h3>
+            <p>arian.sanchez@vallegrande.edu.pe</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="../../../assets/james.jpg">
+            </ion-avatar>
+            <ion-label>
+              James Casas Chacaliaza
+              <h3>Email:</h3>
+              <p>james.casas@vallegrande.edu.pe</p>
+            </ion-label>
+          </ion-item>
+        </ion-card-header>
+      </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-card class="welcome-card">
+      <ion-footer>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="../../../assets/VG.png">
+          </ion-avatar>
+          <ion-label>
+            <h6>© 2020 Copyright "I.S.T.Pr. Valle Grande"</h6>
+          </ion-label>
+        </ion-item>
+      </ion-footer>
+    </ion-card>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+  

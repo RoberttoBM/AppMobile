@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       Usuario: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(1),
-        Validators.maxLength(9),
+        Validators.maxLength(8),
       ]))
     });
 
@@ -45,23 +45,21 @@ export class LoginPage implements OnInit {
     const pwd = this.formControls.Contraseña.value
     this.servicio.login(usr, pwd).subscribe((resp) => {
       console.log(resp);
-
       if (resp !== null) {
-        console.log("entro");
+        console.log(":)");
         this.presentLoading();
         this.router.navigateByUrl('/tab1');
       } else {
-        console.log(":D");   
-        this.presentAlert();
+        console.log(":(");
+        this.presentAlert();   
       }
-
     });
   }
 
   async presentAlert() {
     const alert = await this.alertController.create({   
       subHeader: "Usuario y/o contraseña incorrecto",
-      message: "Intente de nuevo por favor :)",
+      message: "Intente de nuevo por favor ...",
       buttons: ["OK"]
     });
 
@@ -73,13 +71,11 @@ export class LoginPage implements OnInit {
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Cargando Información ... ',
+      message: 'Cargando Información ✍️',
       duration: 3000
     });
     await loading.present();
-
     const { role, data } = await loading.onDidDismiss();
-
     console.log('Loading dismissed!');
   }
 

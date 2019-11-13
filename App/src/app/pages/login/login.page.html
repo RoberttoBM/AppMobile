@@ -17,24 +17,22 @@
           <ion-card-title>Iniciar Sesión</ion-card-title>
         </ion-card-header>
 
-        <div text-center padding>
-          <img src="./../../../assets/IconoRB.svg">
-        </div>
-
         <ion-list>
           <ion-item>
-            <ion-label position="floating">Usuario</ion-label>
+            <ion-label position="floating">Usuario:</ion-label>
             <ion-input formControlName="Usuario" type="text"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
+            <ion-label position="floating">Contraseña:</ion-label>
             <ion-input formControlName="Contraseña" type="password"></ion-input>
           </ion-item>
         </ion-list>
-        <ion-button (click)="login()" type="reset" [disabled]="!loginForm.valid" shape="round" size="default" color="primary"
-          expands="block">Iniciar Sesión</ion-button>
+        <ion-button (click)="login()" type="reset" [disabled]="!loginForm.valid" shape="round" color="primary"
+          >Iniciar Sesión</ion-button>
       </form>
     </ion-row>
   </ion-grid>
+
+
 </ion-content>
