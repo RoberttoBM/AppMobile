@@ -1,15 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Promedio de Notas</ion-title>
+  <ion-toolbar color="warning">
+    <ion-title style="color:rgb(255, 255, 255)">PROMEDIO DE NOTAS:</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content padding>
-    <ion-list-header>Cursos</ion-list-header>      
-  <div class="post" *ngFor="let post of arrayPosts">  
-        
+  <ion-list-header>Bimestre V:</ion-list-header>
+
+  <div class="post" *ngFor="let post of arrayPosts">
+
     <ion-item>
       <ion-label>{{post.NOMCUR}}</ion-label>
       <ion-note slot="end">{{post.BIMESTRE5}}</ion-note>
     </ion-item>
   </div>
+
 </ion-content>
