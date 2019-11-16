@@ -48,7 +48,7 @@ export class LoginPage implements OnInit {
       if (resp !== null) {
         this.presentLoading();
         console.log(":)");
-        this.router.navigateByUrl('/tab1');
+        this.router.navigateByUrl('/tabs/tab1');
       } else {
         console.log(":(");
         this.presentAlert();
@@ -73,7 +73,7 @@ export class LoginPage implements OnInit {
     const loading = await this.loadingCtrl.create({
 
       message: 'Cargando Información...',
-      duration: 5000
+      duration: 3000
     });
     await loading.present();
     const { role, data } = await loading.onDidDismiss();

@@ -2,24 +2,60 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch:'full'},
-  { path: 'tab1', loadChildren: './tab1/tab1.module#Tab1PageModule' },
-  { path: 'tab3', loadChildren: './tab3/tab3.module#Tab3PageModule' },
-  { path: 'notas', loadChildren: './pages/notas/notas.module#NotasPageModule'},
-  { path: 'asistencias', loadChildren: './pages/asistencias/asistencias.module#AsistenciasPageModule' },
-  { path: 'contactos', loadChildren: './pages/contactos/contactos.module#ContactosPageModule' },
-  { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' }, 
-  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
-  { path: 'help', loadChildren: './pages/help/help.module#HELPPageModule' },
-  { path: 'bimestre1', loadChildren: './pages/notas/bimestres/bimestre1/bimestre1.module#Bimestre1PageModule' },
-  { path: 'bimestre2', loadChildren: './pages/notas/bimestres/bimestre2/bimestre2.module#Bimestre2PageModule' },
-  { path: 'bimestre3', loadChildren: './pages/notas/bimestres/bimestre3/bimestre3.module#Bimestre3PageModule' },
-  { path: 'bimestre4', loadChildren: './pages/notas/bimestres/bimestre4/bimestre4.module#Bimestre4PageModule' },
-  { path: 'bimestre5', loadChildren: './pages/notas/bimestres/bimestre5/bimestre5.module#Bimestre5PageModule' },
-
-
-
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'notas',
+    loadChildren: () => import('./pages/notas/notas.module').then(m => m.NotasPageModule)
+  },
+  {
+    path: 'asistencias',
+    loadChildren: () => import('./pages/asistencias/asistencias.module').then(m => m.AsistenciasPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+  },
+  {
+    path: 'help',
+    loadChildren: () => import('./pages/help/help.module').then(m => m.HELPPageModule)
+  },
+  {
+    path: 'contactos',
+    loadChildren: () => import('./pages/contactos/contactos.module').then(m => m.ContactosPageModule)
+  },
+  {
+    path: 'nosotros',
+    loadChildren: () => import('./pages/nosotros/nosotros.module').then(m => m.NosotrosPageModule)
+  },
+  {
+    path: 'bimestre1',
+    loadChildren: () => import('./pages/notas/bimestres/bimestre1/bimestre1.module').then(m => m.Bimestre1PageModule)
+  },
+  {
+    path: 'bimestre2',
+    loadChildren: () => import('./pages/notas/bimestres/bimestre2/bimestre2.module').then(m => m.Bimestre2PageModule)
+  },
+  {
+    path: 'bimestre3',
+    loadChildren: () => import('./pages/notas/bimestres/bimestre3/bimestre3.module').then(m => m.Bimestre3PageModule)
+  },
+  {
+    path: 'bimestre4',
+    loadChildren: () => import('./pages/notas/bimestres/bimestre4/bimestre4.module').then(m => m.Bimestre4PageModule)
+  },
+  {
+    path: 'bimestre5',
+    loadChildren: () => import('./pages/notas/bimestres/bimestre5/bimestre5.module').then(m => m.Bimestre5PageModule)
+  },
+  
+  
 ];
 @NgModule({
   imports: [
@@ -27,5 +63,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 

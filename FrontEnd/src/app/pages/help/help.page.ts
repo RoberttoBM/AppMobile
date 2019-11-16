@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HelpService } from 'src/app/services/help.service';
 import { Help } from '../intefaces/IHelp';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, AlertController } from '@ionic/angular';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-help',
@@ -10,13 +11,34 @@ import { LoadingController } from '@ionic/angular';
 })
 export class HELPPage implements OnInit {
 
+  Formulario: FormGroup;
+  numero: any = /^[0-9]+/;
 
   HELP: Help = new Help();
 
   constructor(
     private helpService: HelpService,
     private loadingCtrl: LoadingController,
-    ) { }
+    public formBuilder: FormBuilder,
+    public alertController: AlertController,
+    )
+    {
+      this.Formulario = this.formBuilder.group({
+        CONSULTA: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(30),
+        ])),
+  
+        DNIPER: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern(this.numero),
+          Validators.minLength(8),
+          Validators.maxLength(8),
+        ]))
+      });
+  
+    }
 
   ngOnInit() {
   }
@@ -42,7 +64,7 @@ export class HELPPage implements OnInit {
     this.helpService.saveConsulta(this.HELP).then((result) => {
       console.log(result);
     });
-    
+    this.HELP = new Help();
   }
 
 
