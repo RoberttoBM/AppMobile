@@ -22,8 +22,7 @@ export class HelpService {
   saveConsulta(help: Help) {
     console.log(help);
     return new Promise((resolve, reject) => {
-      // tslint:disable-next-line: deprecation
-      this.http.post<Help>('http://localhost:3000/help/create', help).subscribe(res => {
+      this.http.post<Help>(`${this.url}/help/create`, help).subscribe(res => {
         resolve(res);
       });
     });

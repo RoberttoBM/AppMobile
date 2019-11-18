@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar color="warning">
+    <ion-toolbar color="success">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/tabs/notas"></ion-back-button>
           </ion-buttons>
@@ -13,7 +13,7 @@
     <div class="post" *ngFor="let post of arrayPosts">
       <ion-item>
         <ion-label>{{post.NOMCUR}}</ion-label>
-        <ion-note slot="end"><h3>{{post.BIMESTRE2}}</h3></ion-note>
+        <ion-note slot="end">{{post.BIMESTRE2}}</ion-note>
       </ion-item>
     </div>
   
