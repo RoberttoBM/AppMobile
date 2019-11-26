@@ -15,6 +15,13 @@ export class UserService {
         return this.usuarioRepository.find();
     }
 
+    async read(IDPER: number) {
+        let persona = await this.usuarioRepository.createQueryBuilder("persona")
+        .where("persona.IDPER = :IDPER", { IDPER })
+        .getOne();
+        return persona;
+    }
+
     async create(persona: UsuarioDTO) {
         let user = this.usuarioRepository.create(persona);
         return this.usuarioRepository.save(user);

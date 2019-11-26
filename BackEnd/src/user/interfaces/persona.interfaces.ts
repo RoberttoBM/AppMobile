@@ -1,10 +1,12 @@
 export interface IPersona {
     IDPER?: number;
-    NOMPER: String;
-    APEPER: String;
+    NOMBRE: String;
+    APELLIDO: String; 
     DNIPER: String;
-    DIRPER: String;
-    CELPER: String;
     CONTRPER: String;
     USUPER: String;
+    ASISTENCIAS: String;
+    FALTAS: String;
+    CABELLOANTIRREGLAMENTARIO: String;
+    MALVESTIDO: String;
 }

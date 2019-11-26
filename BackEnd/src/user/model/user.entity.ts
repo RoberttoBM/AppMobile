@@ -1,45 +1,41 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
-@Entity('PERSONA')
+
+//Uso la vista 'IASISTENCIAS' 
+//para que solo los usuarios que aparezcan en esa vista 
+//tengan acceso a la aplicación. :D
+@Entity('IASISTENCIAS')
 export class Usuario {
 
     @PrimaryColumn()
     IDPER: number;
 
-    @Column("varchar2", { length: 100 })
-    NOMPER: string;
+    @Column("varchar2")
+    NOMBRE: string;
 
-    @Column("varchar2", { length: 100 })
-    APEPER: string;
+    @Column("varchar2")
+    APELLIDO: string; 
 
-    @Column("char", { length: 8 })
+    @Column("char")
     DNIPER: String;
 
-    @Column("varchar2", { length: 150 })
-    PARPER: String;
-
-    @Column("varchar2", { length: 150 })
-    CORPER: String;
-
-    @Column("char", { length: 6 })
-    IDUBI: String;
-
-    @Column("char", { length: 1 })
-    SEXPER: String;
-    
-    @Column("varchar2", { length: 350 })
-    DIRPER: String;
-
-    @Column("char", { length: 1 })
-    ESTPER: String;
-
-    @Column("char", { length: 9 })
-    CELPER: String;
-
-    @Column("varchar", {length: 50 })
+    @Column("varchar")
     USUPER: String;
 
-    @Column("varchar", {length: 50 })
+    @Column("varchar")
     CONTRPER: String;
 
+    @Column("varchar")
+    ASISTENCIAS: String;
+
+    @Column("varchar")
+    FALTAS: String;
+    
+    @Column("varchar")
+    CABELLOANTIRREGLAMENTARIO: String;
+
+    @Column("varchar")
+    MALVESTIDO: String;
+
+  
 }

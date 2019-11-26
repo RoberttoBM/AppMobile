@@ -14,8 +14,22 @@ export class AsistenciasService {
         return this.AsistenciasRepository.find();
     }
 
-    async query(CODAUL:number){
+    async query(IDPER:number){
         let asistencias = this.AsistenciasRepository.createQueryBuilder('Asistencias');
     }
+
+    async read(IDPER: number) {
+        let asistencias = await this.AsistenciasRepository.createQueryBuilder("Asistencias")
+        .where("Asistencias.IDPER = :IDPER", { IDPER })
+        .getOne();
+        return asistencias;
+    }
+
+    async findByUserName(USUPER: string) {
+        const asistencias = await this.AsistenciasRepository.createQueryBuilder("Asistencias")
+            .where("Asistencias.USUPER = :USUPER", { USUPER })
+            .getOne();
+        return asistencias;
+    } 
 
 }

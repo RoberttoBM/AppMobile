@@ -1,11 +1,12 @@
 export class UsuarioDTO {
     IDPER: number;
-    NOMPER: string;
-    APEPER: string;
+    NOMBRE: string;
+    APELLIDO: string;
     DNIPER: String;
-    PARPER: String;
-    DIRPER: String;
-    CELPER: String;
     CONTRPER: String;
     USUPER: String;
+    ASISTENCIAS: String;
+    FALTAS: String;
+    CABELLOANTIRREGLAMENTARIO: String;
+    MALVESTIDO: String;
 }

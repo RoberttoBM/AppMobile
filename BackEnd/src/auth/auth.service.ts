@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from './../user/user.service';
-import { Usuario } from './../user/model/user.entity';
-import { getRepository } from 'typeorm';
 
 @Injectable()
 export class AuthService {
@@ -28,14 +26,4 @@ export class AuthService {
     };
   }
 
-  async mylogin( usr: string, pwd: string) {
-    const user = await getRepository(Usuario)
-      .createQueryBuilder()
-      .select("user")
-      .from(Usuario, "user")
-      .where("user.USUPER = :usr", { usr})
-      .andWhere("user.CONTRPER = :pwd", { pwd})
-      .getOne();
-    return user;
-  }
 }

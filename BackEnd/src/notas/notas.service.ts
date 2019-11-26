@@ -19,4 +19,13 @@ export class NotasService {
         let notas = this.NotasRepository.createQueryBuilder('Notas');
     }
 
+    async read(CODMAT: number) {
+        let notas = await this.NotasRepository.createQueryBuilder("Notas")
+        .where("Notas.CODMAT = :CODMAT", { CODMAT })
+        .getOne();
+
+        return notas;
+    }
+
+
 }

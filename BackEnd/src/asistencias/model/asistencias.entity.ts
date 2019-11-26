@@ -1,22 +1,36 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
-@Entity('MV_LISTARASISTENCIA')
+@Entity('IASISTENCIAS')
 export class Asistencias {
 
     @PrimaryColumn()
-    CODAUL: number;
+    IDPER: number;
 
     @Column("varchar2")
     NOMBRE: String;
 
     @Column("varchar2")
     APELLIDO: String;
-  
-    @Column("char")
-    CANTIDAD: number;
 
     @Column("varchar2")
-    CRITERIO: String;
+    DNIPER: String;
 
+    @Column("varchar2")
+    USUPER: String;
+
+    @Column("varchar2")
+    CONTRPER: String;
+  
+    @Column("varchar2")
+    ASISTENCIAS: String;
+
+    @Column("varchar2")
+    FALTAS: String;
+
+    @Column("varchar2")
+    CABELLOANTIRREGLAMENTARIO: String;
+
+    @Column("varchar2")
+    MALVESTIDO: String;
 
 }

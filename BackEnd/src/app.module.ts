@@ -6,7 +6,6 @@ import { UserModule } from './user/user.module';
 import { NotasModule } from './notas/notas.module';
 import { AsistenciasModule } from './asistencias/asistencias.module';
 import { AuthModule } from './auth/auth.module';
-import { LoginModule } from './login/login.module';
 import { HelpModule } from './help/help.module';
 
 @Module({
@@ -18,7 +17,7 @@ import { HelpModule } from './help/help.module';
     "synchronize": false,
     "logging": true,
     "entities": [__dirname + '/**/**.entity{.ts,.js}']
-  }), UserModule, NotasModule, AsistenciasModule, AuthModule, UserModule, LoginModule, HelpModule],
+  }), UserModule, NotasModule, AsistenciasModule, AuthModule, UserModule, HelpModule],
   controllers: [AppController],
   providers: [AppService],
 })

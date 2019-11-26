@@ -1,0 +1,41 @@
+<ion-content padding>
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+            <form padding>
+                <div text-center padding>
+                </div>
+                <ion-card>
+
+                    <ion-card-header class="item item-trns">
+                        <ion-card-title>FRACTAL</ion-card-title>
+                        <ion-card-subtitle>Academia - Colegio</ion-card-subtitle>
+
+                        <ion-list>
+                            <br />
+
+                            <ion-item>
+                                <ion-icon name="contact" slot="start"></ion-icon>
+                                <ion-input placeholder="Usuario" autofocus="true" type="text" name="usuario"
+                                    [(ngModel)]='usuario' required required-mesage="aaa"></ion-input>
+                            </ion-item>
+                            <br />
+
+                            <ion-item>
+                                <ion-icon name="lock" slot="start"></ion-icon>
+                                <ion-input placeholder="Contraseña" type="password" name="password"
+                                    [(ngModel)]='password' required></ion-input>
+                            </ion-item>
+                            <br />
+                            <ion-button size="large" expand="full" (click)="signIn()">
+                                Iniciar Sesión
+                            </ion-button>
+                            <ion-card-subtitle>Edooca</ion-card-subtitle>
+                        </ion-list>
+
+                    </ion-card-header>
+                </ion-card>
+            </form>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

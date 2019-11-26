@@ -1,0 +1,7 @@
+{
+  "name": "Fractal",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

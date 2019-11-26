@@ -1,9 +1,16 @@
 export class AsistenciasDTO {
 
-    CODAUL: number;
+    IDPER: number;
     NOMBRE: String;
     APELLIDO: String;
-    CANTIDAD: number;
-    CRITERIO: String;
+    DNIPER: String;
+    USUPER: String;
+    CONTRPER: String;
+    ASISTENCIAS: String;
+    FALTAS: String;
+    CABELLOANTIRREGLAMENTARIO: String;
+    MALVESTIDO: String;
+
+
 
 }
