@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { URL } from './../../../environments/environment';
 import { Observable } from 'rxjs';
-import { Usuario } from '../../interfaces/IUsuario';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +14,6 @@ export class UsuarioService {
   getUser(IDPER: string): Observable<any> {
     return this.http.get(`${URL.url}/user/leer/${IDPER}`);
   }
-
-  
 
   //Traer asistencias de los estudiantes por parametros
   getAsistencias(IDPER: string): Observable<any> {

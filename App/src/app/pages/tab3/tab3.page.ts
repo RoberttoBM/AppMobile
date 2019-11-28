@@ -2,6 +2,9 @@ import { Network } from '@ionic-native/network/ngx';
 import { AuthService } from '../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController, AlertController } from '@ionic/angular';
+import { ModalEsperaPage } from '../modal-espera/modal-espera.page';
+import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
+import { Usuario } from '../../interfaces/IUsuario';
 
 @Component({
   selector: 'app-tab3',
@@ -9,30 +12,22 @@ import { ModalController, ToastController, AlertController } from '@ionic/angula
   styleUrls: ['./tab3.page.scss'],
 })
 export class Tab3Page implements OnInit {
+  
+  Usuario: Usuario = { IDPER: 0, NOMPER: "", APEPER: "", DNIPER: "", USUPER: "", CONTRPER: "", GRAAUL: "", SECAUL: "", NOMCUR:"", BIMESTRE1:0, BIMESTRE2:0, BIMESTRE3:0 ,BIMESTRE4:0 ,BIMESTRE5:0 }
 
-  loading: any;
 
   constructor(
+    private usuarioLocalService: UsuarioLocalService,
     private alertController: AlertController,
+    private modalCtrl: ModalController,
     private authService: AuthService,
     private network: Network,
     private toastCtrl: ToastController, ) {
-
-    this.network.onDisconnect().subscribe(() => {
-      console.log('network was disconnected :-(');
-      this.presentToast("Desconectado", "danger");
-
+      
+    this.usuarioLocalService.getUser().then(resp => {
+      this.Usuario = resp;
     });
 
-    this.network.onConnect().subscribe(() => {
-      console.log('network connected!');
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          console.log('we got a wifi connection, woohoo!');
-          this.presentToast("Conectado", "success");
-        }
-      }, 3000);
-    });
   }
 
   async presentToast(message: string, color: string) {
@@ -47,13 +42,13 @@ export class Tab3Page implements OnInit {
   ngOnInit() { }
 
 
+
+  //Cerrar Sesión.
   singOut() {
     this.authService.logout();
   }
 
-  
-
-
+  //Este mensaje mostrará un mensaje de confirmación para cerrar sesión.
   async showConfirmAlert() {
     const alert = await this.alertController.create({
       header: 'Advertencia:',
@@ -74,10 +69,29 @@ export class Tab3Page implements OnInit {
             console.log('Mantiene la sesión abierta');
           }
         }
-       
+
       ]
     });
     await alert.present();
   }
+
+
+  //Espera para cargar los datos
+  async onModal(dato) {
+    let con = this.network.type;
+    console.log(con);
+    if (con != this.network.Connection.NONE && con != this.network.Connection.UNKNOWN) {
+      const modal = await this.modalCtrl.create({
+        component: ModalEsperaPage,
+        componentProps: {
+          dato
+        }
+      });
+      return await modal.present();
+    }
+
+  }
+
+
 
 }

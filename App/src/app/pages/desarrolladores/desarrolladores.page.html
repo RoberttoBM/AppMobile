@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title style="color:rgb(0, 0, 0)">Desarrolladores:</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:rgb(255, 255, 255)">Desarrolladores:</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,7 +26,7 @@
 
 
   <ion-card class="welcome-card">
-    <ion-card-header  size="large">
+    <ion-card-header size="large">
       <ion-item>
         <ion-avatar slot="start">
           <img src="../../../assets/arian.png">
@@ -47,7 +50,7 @@
         </ion-label>
         <ion-button (click)="presentAlert3()" color="primary">Ver Más</ion-button>
       </ion-item>
-      
+
     </ion-card-header>
   </ion-card>
 

@@ -2,8 +2,8 @@ import { ToastService } from './../services/toast.service';
 import { UsuarioLocalService } from '../services/usuario/usuario-local.service';
 import { AuthService } from '../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { ConectionStatusService } from '../services/conection-status.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
+import { ModalEsperaPage } from '../pages/modal-espera/modal-espera.page';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -18,8 +18,8 @@ export class LoginPage implements OnInit {
   constructor(
     private userLocalService: UsuarioLocalService,
     private authService: AuthService,
-    private conectionService: ConectionStatusService,
     private toastService: ToastService,
+    private modalCtrl: ModalController,
     public alertController: AlertController,
 
   ) { }
@@ -27,6 +27,15 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  async onModal(dato) {
+    const modal = await this.modalCtrl.create({
+      component: ModalEsperaPage,
+      componentProps: {
+        dato
+      }
+    });
+    return modal;
+  }
 
   ionViewWillEnter() {
     console.log("Ingresar Usuario y Contraseña");
@@ -37,10 +46,6 @@ export class LoginPage implements OnInit {
 
   async signIn() {
 
-    if (!this.conectionService.isConection()) {
-      return;
-    }
-
     let credentials = {
       username: this.usuario,
       password: this.password
@@ -50,6 +55,10 @@ export class LoginPage implements OnInit {
       await this.authService.presentLoading();
       this.authService.login(credentials).subscribe(async (res: any) => {
         await this.userLocalService.saveUser(res);
+        console.log(res);
+        let mod = await this.onModal("sync");
+        await mod.present();
+        // await mod.onDidDismiss();
         this.authService.onLogin();
       }, (err) => {
         console.log(err);
@@ -64,19 +73,6 @@ export class LoginPage implements OnInit {
 
   logout() {
     this.authService.logout();
-  }
-
-
-
-//Para cerrar sesión :D
-  async presentAlertMultipleButtons() {
-    const alert = await this.alertController.create({
-      header: '¡Mensaje de confirmación!',
-      subHeader: '¿Desea cerrar sesión?',
-      message: '¿Desea cerrar sesión?',
-      buttons: ['Cancelar', 'Sí']
-    });
-    await alert.present();
   }
 
 }

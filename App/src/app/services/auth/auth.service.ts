@@ -1,15 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { URL } from '../../../environments/environment';
-import { Platform, AlertController, LoadingController } from '@ionic/angular';
+import { Platform, LoadingController } from '@ionic/angular';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Storage } from '@ionic/storage';
 import { tap, catchError,  } from 'rxjs/operators';
 import { BehaviorSubject, Observable, from  } from 'rxjs';
 import { Usuario } from '../../interfaces/IUsuario';
-
 import { TOKEN_KEY } from './../../../environments/environment';
-import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +23,6 @@ export class AuthService {
     private helper: JwtHelperService,
     private storage: Storage,
     private plt: Platform,
-    private alertController: AlertController,
     public loadingController: LoadingController
   ) {
 
@@ -42,6 +39,7 @@ export class AuthService {
     });
     return await this.loading.present();
   }
+
 
   
  
@@ -70,10 +68,11 @@ export class AuthService {
     return this.http.post<Usuario>(`${URL.url}/auth/login`, credentials)
       .pipe(
         tap(res => {
-          console.log(res);
+          console.log("consulta",res);
           this.storage.set(TOKEN_KEY, res['access_token']);
           this.user = this.helper.decodeToken(res['access_token']);
           delete res['access_token'];
+          console.log("usuario",this.user);
           this.loading.dismiss();
         }),
         catchError(async(e) => {
@@ -83,6 +82,7 @@ export class AuthService {
       );
   }
 
+  //Llamamos este metodo en el tab 3 para cerrar sesión elminando el JWT
   logout() {
     this.storage.remove(TOKEN_KEY).then(() => {
       this.authenticationState.next(false);
@@ -93,14 +93,6 @@ export class AuthService {
     return this.authenticationState.value;
   }
 
-  showAlert(msg) {
-    let alert = this.alertController.create({
-      message: msg,
-      header: 'Error',
-      buttons: ['OK']
-    });
-    alert.then(alert => alert.present());
-  }
 
   async getToken(){
     return await this.storage.get(TOKEN_KEY);

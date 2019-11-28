@@ -16,11 +16,11 @@ export class UsuarioLocalService {
     await this.storage.set(ENTITY.usuario, user);
   }
 
-  //traemos los datos del estudiante para mostrarlo en el tab3
+  //traemos los datos del estudiante para mostrarlo en el tab3 como perfil del usuario
   async getUser(){
     let user:Usuario = await this.storage.get(ENTITY.usuario);
     if(!user){
-      user.NOMBRE = "Problema interno";
+      user.NOMPER = "Problema interno";
     }
     return user;
   }

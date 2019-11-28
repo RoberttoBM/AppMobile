@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar color="warning">
-    <ion-title style="color:rgb(0, 0, 0)">CONSULTAS:</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:rgb(255, 255, 255)">Consultas:</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,14 +13,14 @@
   <form [formGroup]="Formulario">
     <ion-item>
       <ion-label position="floating">N° de DNI</ion-label>
-
       <ion-input formControlName="DNIPER" type="text" maxlength="8" required="required" [(ngModel)]="HELP.DNIPER"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Detalle de su consulta:</ion-label>
 
-      <ion-textarea formControlName="CONSULTA" type="text" required="required" [(ngModel)]="HELP.CONSULTA"></ion-textarea>
+      <ion-textarea formControlName="CONSULTA" type="text" required="required" [(ngModel)]="HELP.CONSULTA">
+      </ion-textarea>
 
       <br>
       <br>

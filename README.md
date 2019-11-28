@@ -1,1 +1,2 @@
-# Aplicación móvil desarrollada en IONIC 4
+# Fractal
+## Creación de una App móvil utilizando Ionic 4 y NestJS. 🍪

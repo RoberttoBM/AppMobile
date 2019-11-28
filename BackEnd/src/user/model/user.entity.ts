@@ -1,41 +1,53 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
 
-//Uso la vista 'IASISTENCIAS' 
+//Uso la vista 'INOTAS' 
 //para que solo los usuarios que aparezcan en esa vista 
 //tengan acceso a la aplicación. :D
-@Entity('IASISTENCIAS')
+@Entity('INOTAS')
 export class Usuario {
 
     @PrimaryColumn()
     IDPER: number;
 
     @Column("varchar2")
-    NOMBRE: string;
+    NOMPER: String;
 
     @Column("varchar2")
-    APELLIDO: string; 
+    APEPER: String; 
 
     @Column("char")
-    DNIPER: String;
+    DNIPER: number;
 
-    @Column("varchar")
+    @Column("varchar2")
     USUPER: String;
 
-    @Column("varchar")
+    @Column("varchar2")
     CONTRPER: String;
 
-    @Column("varchar")
-    ASISTENCIAS: String;
+    @Column("varchar2")
+    GRAAUL: String;
 
-    @Column("varchar")
-    FALTAS: String;
+    @Column("varchar2")
+    SECAUL: String;
     
-    @Column("varchar")
-    CABELLOANTIRREGLAMENTARIO: String;
+    @Column("varchar2")
+    NOMCUR: String;
 
-    @Column("varchar")
-    MALVESTIDO: String;
+    @Column("varchar2")
+    BIMESTRE1: number;
+
+    @Column("varchar2")
+    BIMESTRE2: number;
+
+    @Column("varchar2")
+    BIMESTRE3: number;
+
+    @Column("varchar2")
+    BIMESTRE4: number;
+
+    @Column("varchar2")
+    BIMESTRE5: number;
 
   
 }

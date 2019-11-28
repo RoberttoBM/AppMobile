@@ -11,16 +11,14 @@ export class Tab1Page implements OnInit {
   tipoCultivo: string;
   subscription;
   constructor(
-    private toastCtrl: ToastController,
     private platform: Platform,
   ) { }
 
   ngOnInit() {
-    this.presentToast("asdsadsaddsad", "danger");
   }
 
   ionViewWillEnter() {
-    console.log("Entra :D ionVIewWillEnter");
+    console.log("Entra :D");
   }
 
   ionViewDidEnter() {
@@ -34,7 +32,7 @@ export class Tab1Page implements OnInit {
   }
 
 
-  //Mensaje de bienvenido :D
+ /*  //Mensaje de bienvenido :D
   async presentToast(message: string, color: string) {
     const toast = await this.toastCtrl.create({
       color: 'success',
@@ -42,7 +40,7 @@ export class Tab1Page implements OnInit {
       duration: 2000
     });
     toast.present();
-  }
+  } */
 
 
 
