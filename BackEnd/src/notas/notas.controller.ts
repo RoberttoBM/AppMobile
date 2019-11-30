@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { NotasService } from './notas.service';
-import { INotas } from './interfaces/notas.interfaces';
 
 @Controller('notas')
 export class NotasController {
@@ -12,9 +11,16 @@ export class NotasController {
         return this.notasService.findAll();
     }
 
-    @Get(':CODMAT')
-    async getPersona(@Param('CODMAT') CODMAT: string): Promise<INotas> {
-        return await this.notasService.read(parseInt(CODMAT));
-    }
+
+    //Parametro para obtener las notas por código de persona, lo consumimos desde nuestro servicio "notas"
+     @Get('read/:IDPER')
+    async getPersona(@Param('IDPER') IDPER: string) {
+        return await this.notasService.read(parseInt(IDPER));
+    } 
+/* 
+    @Get('read/:IDPER')
+    async getNotas(@Param('IDPER') params) {
+        return this.notasService.read(parseInt(params.IDPER));
+    } */
 
 }

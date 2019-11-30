@@ -25,6 +25,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [NotasPage],
-  entryComponents:[ModalEsperaPage]
+  entryComponents: [ModalEsperaPage]
 })
 export class NotasPageModule {}

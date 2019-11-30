@@ -13,7 +13,7 @@ import { Usuario } from '../../interfaces/IUsuario';
 })
 export class Tab3Page implements OnInit {
   
-  Usuario: Usuario = { IDPER: 0, NOMPER: "", APEPER: "", DNIPER: "", USUPER: "", CONTRPER: "", GRAAUL: "", SECAUL: "", NOMCUR:"", BIMESTRE1:0, BIMESTRE2:0, BIMESTRE3:0 ,BIMESTRE4:0 ,BIMESTRE5:0 }
+  Usuario: Usuario = { IDPER: 0 ,NOMPER: "", APEPER: "", DNIPER: 0, ESTPER: "", TIPPER: "", DIRPER: "", USUPER:"", CONTRPER:""}
 
 
   constructor(

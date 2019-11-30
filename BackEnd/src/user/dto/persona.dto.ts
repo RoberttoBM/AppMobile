@@ -1,16 +1,12 @@
-export class UsuarioDTO {
+export class PersonaDto {
     IDPER: number;
-    NOMPER: string;
-    APEPER: string;
+    NOMPER: String;
+    APEPER: String;
     DNIPER: number;
-    USUPER: string;
-    CONTRPER: string;
-    GRAAUL: string;
-    SECAUL: string;
-    NOMCUR: string;
-    BIMESTRE1: number;
-    BIMESTRE2: number;
-    BIMESTRE3: number;
-    BIMESTRE4: number;
-    BIMESTRE5: number;
+    ESTPER: String;
+    TIPPER: String;
+    DIRPER: String;
+    USUPER: String;
+    CONTRPER: String;
+
 }

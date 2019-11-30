@@ -8,7 +8,7 @@ export const URL = {
 
 export const ENTITY = {
   usuario: "usuario",
-  IAsistencias: "asistencias"
+  notas: "notas"
 }
 
 export const TOKEN_KEY = 'access_token';

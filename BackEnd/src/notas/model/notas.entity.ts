@@ -1,17 +1,14 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
-@Entity('NOTAS')
+@Entity('INOTAS')
 export class Notas {
 
     @PrimaryColumn()
-    CODMAT: number;
+    CODCUR: number
 
-    @Column("varchar2")
-    ESTUDIANTE: String;
+    @Column("number")
+    IDPER: number;
 
-    @Column("varchar2")
-    SECCIONES: String;
-  
     @Column("varchar2")
     NOMCUR: String;
 

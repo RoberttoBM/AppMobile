@@ -15,17 +15,17 @@ export class NotasService {
         return this.NotasRepository.find();
     }
 
-    async query(CODMAT:number){
-        let notas = this.NotasRepository.createQueryBuilder('Notas');
-    }
-
-    async read(CODMAT: number) {
+    //Obteniendo las notas por código de persona
+    async read(IDPER: number) {
         let notas = await this.NotasRepository.createQueryBuilder("Notas")
-        .where("Notas.CODMAT = :CODMAT", { CODMAT })
-        .getOne();
-
+        .where("Notas.IDPER = :IDPER", { IDPER })
+        //con este metodo llamamamos a todas las notas que tengan el codigo del estudiante logueado
+        //si ponemos ".getOne();" solo llamara uno solo, pero ese metodo solo lo usaremos en el login
+        .getMany();
         return notas;
     }
-
-
+ 
+    async query(IDPER:number){
+        let notas = this.NotasRepository.createQueryBuilder('Notas');
+    }
 }

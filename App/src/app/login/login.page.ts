@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ModalEsperaPage } from '../pages/modal-espera/modal-espera.page';
+import { UsuarioService } from '../services/usuario/usuario.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -18,6 +19,7 @@ export class LoginPage implements OnInit {
   constructor(
     private userLocalService: UsuarioLocalService,
     private authService: AuthService,
+    private usuarioService: UsuarioService,
     private toastService: ToastService,
     private modalCtrl: ModalController,
     public alertController: AlertController,
@@ -54,11 +56,11 @@ export class LoginPage implements OnInit {
     try {
       await this.authService.presentLoading();
       this.authService.login(credentials).subscribe(async (res: any) => {
+        await this.userLocalService.saveNotas(res);
         await this.userLocalService.saveUser(res);
         console.log(res);
         let mod = await this.onModal("sync");
         await mod.present();
-        // await mod.onDidDismiss();
         this.authService.onLogin();
       }, (err) => {
         console.log(err);

@@ -8,7 +8,6 @@ import { Platform, ToastController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
-  tipoCultivo: string;
   subscription;
   constructor(
     private platform: Platform,

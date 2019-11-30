@@ -12,7 +12,12 @@ export class UsuarioService {
 
   //Traer al usuario logueado
   getUser(IDPER: string): Observable<any> {
-    return this.http.get(`${URL.url}/user/leer/${IDPER}`);
+    return this.http.get(`${URL.url}/user/read/${IDPER}`);
+  }
+
+  //Traer notas del estudiante
+  getNotas(IDPER: string): Observable<any> {
+    return this.http.get(`${URL.url}/notas/read/${IDPER}`);
   }
 
   //Traer asistencias de los estudiantes por parametros

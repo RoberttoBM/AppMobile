@@ -5,6 +5,7 @@ import { ToastService } from '../../services/toast.service';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { INotas } from '../../interfaces/INotas';
 
 @Component({
   selector: 'app-modal-espera',
@@ -15,6 +16,7 @@ export class ModalEsperaPage implements OnInit {
 
   @Input() dato: string;
   private user: Usuario;
+  private notas: INotas
 
   constructor(
     private modalEsperaCtrl: ModalController,
@@ -38,6 +40,7 @@ export class ModalEsperaPage implements OnInit {
   //Una ves logueado guardamos al usuario local y el token
   async sync() {
     this.user = await this.usuarioLocalService.getUser();
+    this.notas = await this.usuarioLocalService.getNotas();
     const token = await this.authService.getToken();
     this.toastService.presentToast1("","");
     this.salir();
