@@ -6,10 +6,10 @@ import { PersonaDto } from './dto/persona.dto';
 @Controller('user')
 export class UserController {
 
-    constructor(private userService:UserService){}
+    constructor(private userService: UserService) { }
 
     @Get('/read')
-    getAll(){
+    getAll() {
         return this.userService.findAll();
     }
 
@@ -18,8 +18,15 @@ export class UserController {
         return this.userService.read(parseInt(params.IDPER));
     }
 
+    @Get('notas/:IDPER')
+    async getNotas(@Param() params) {
+        return this.userService.getNotas(parseInt(params.IDPER));
+    }
+
+
+
     @Post('crear/:IDPER')
-    async create(@Body() data: PersonaDto){
+    async create(@Body() data: PersonaDto) {
         return this.userService.create(data);
     }
 

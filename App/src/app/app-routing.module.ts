@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule', canActivate: [AuthGuardService] },
   { path: 'desarrolladores', loadChildren: './pages/desarrolladores/desarrolladores.module#DesarrolladoresPageModule' },
   { path: 'help', loadChildren: './pages/help/help.module#HELPPageModule' },   
-  { path: 'notas', loadChildren: './pages/notas/notas.module#NotasPageModule' },
+  //{ path: 'notas', loadChildren: './pages/notas/notas.module#NotasPageModule' },
   
 /*{ path: 'b1', loadChildren: './pages/notas/b1/b1.module#B1PageModule' },
   { path: 'b2', loadChildren: './pages/notas/b2/b2.module#B2PageModule' },

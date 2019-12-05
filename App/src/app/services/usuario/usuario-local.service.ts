@@ -1,6 +1,6 @@
 import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../interfaces/IUsuario';
+import { Usuario, Notas } from '../../interfaces/IUsuario';
 import { ENTITY } from '../../../environments/environment';
 import { INotas } from '../../interfaces/INotas';
 
@@ -13,28 +13,27 @@ export class UsuarioLocalService {
 
 
   //guardamos los datos del usuario
-  async saveUser(user: Usuario){
-    await this.storage.set(ENTITY.usuario, user);
+  async saveUser(user: Usuario) {
+    console.log('saveUser', user)
+    return this.storage.set(ENTITY.usuario, user);
   }
 
   //guardamos los datos del usuario
-  async saveNotas(notas: INotas){
-    await this.storage.set(ENTITY.usuario, notas);
+  async saveNotas(notas: Notas[]) {
+    console.log(notas);
+    return this.storage.set(ENTITY.notas, notas);
+
   }
 
   //traemos los datos del estudiante para mostrarlo en el tab3 como perfil del usuario
-  async getUser(){
-    let user:Usuario = await this.storage.get(ENTITY.usuario);
-    if(!user){
-      user.NOMPER = "Problema interno";
-    }
-    return user;
+  async getUser(): Promise<Usuario> {
+    return this.storage.get(ENTITY.usuario);
   }
 
   //Traemos las notas del estudiante
-  async getNotas(){
-    let notas:INotas = await this.storage.get(ENTITY.notas);
-    if(!notas){
+  async getNotas() {
+    let notas: INotas = await this.storage.get(ENTITY.notas);
+    if (!notas) {
       notas.NOMCUR = "Problema interno";
     }
     return notas;

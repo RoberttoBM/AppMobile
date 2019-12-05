@@ -40,7 +40,6 @@ export class ModalEsperaPage implements OnInit {
   //Una ves logueado guardamos al usuario local y el token
   async sync() {
     this.user = await this.usuarioLocalService.getUser();
-    this.notas = await this.usuarioLocalService.getNotas();
     const token = await this.authService.getToken();
     this.toastService.presentToast1("","");
     this.salir();

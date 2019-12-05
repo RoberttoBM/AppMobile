@@ -16,9 +16,6 @@ export class Tab1Page implements OnInit {
   ngOnInit() {
   }
 
-  ionViewWillEnter() {
-    console.log("Entra :D");
-  }
 
   ionViewDidEnter() {
     this.subscription = this.platform.backButton.subscribe(() => {
@@ -29,21 +26,5 @@ export class Tab1Page implements OnInit {
   ionViewWillLeave() {
     this.subscription.unsubscribe();
   }
-
-
- /*  //Mensaje de bienvenido :D
-  async presentToast(message: string, color: string) {
-    const toast = await this.toastCtrl.create({
-      color: 'success',
-      message: 'Bienvendido... 😊',
-      duration: 2000
-    });
-    toast.present();
-  } */
-
-
-
-
-
 
 }

@@ -1,26 +1,24 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { NotasService } from './notas.service';
+import { AuthGuard } from '@nestjs/passport';
+import { SourceMapDevToolPlugin } from 'webpack';
 
 @Controller('notas')
 export class NotasController {
 
-    constructor(private notasService: NotasService){}
+    constructor(private notasService: NotasService) { }
 
     @Get('/read')
-    getAll(){
+    async getAll() {
         return this.notasService.findAll();
     }
 
 
-    //Parametro para obtener las notas por código de persona, lo consumimos desde nuestro servicio "notas"
-     @Get('read/:IDPER')
-    async getPersona(@Param('IDPER') IDPER: string) {
-        return await this.notasService.read(parseInt(IDPER));
-    } 
-/* 
     @Get('read/:IDPER')
-    async getNotas(@Param('IDPER') params) {
-        return this.notasService.read(parseInt(params.IDPER));
-    } */
+    async getPersona(@Param('IDPER') IDPER: string) {
+        return await this.notasService.getNotas(IDPER);
+    }
+
+
 
 }

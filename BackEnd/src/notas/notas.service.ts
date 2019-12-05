@@ -7,25 +7,33 @@ import { Notas } from './model/notas.entity';
 @Injectable()
 export class NotasService {
 
-    constructor(@InjectRepository(Notas) 
-    private NotasRepository: Repository<Notas>,
-    ){}
+    constructor(
+        @InjectRepository(Notas) 
+         private readonly NotasRepository: Repository<Notas>,){}
 
     async findAll(){
-        return this.NotasRepository.find();
+        return this.NotasRepository.find({relations: ['persona']});
     }
 
-    //Obteniendo las notas por código de persona
-    async read(IDPER: number) {
-        let notas = await this.NotasRepository.createQueryBuilder("Notas")
+    async read(IDPER) {
+        //let notas = await this.NotasRepository.createQueryBuilder("Notas")
+        return this.NotasRepository.createQueryBuilder("Notas")
+        .innerJoinAndSelect("Notas.IDPER", "IDPER")
         .where("Notas.IDPER = :IDPER", { IDPER })
-        //con este metodo llamamamos a todas las notas que tengan el codigo del estudiante logueado
-        //si ponemos ".getOne();" solo llamara uno solo, pero ese metodo solo lo usaremos en el login
         .getMany();
-        return notas;
+        //return notas;
+    }
+
+    async getNotas(IDPER){
+        return this.NotasRepository.createQueryBuilder("notasPersona")
+        .innerJoin("notasPersona.persona", "persona")
+        .where("notasPersona.IDPER = :IDPER", {IDPER})
+        .getMany();
     }
  
-    async query(IDPER:number){
-        let notas = this.NotasRepository.createQueryBuilder('Notas');
-    }
+
+
+
+
+
 }

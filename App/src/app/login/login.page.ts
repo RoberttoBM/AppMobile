@@ -55,10 +55,11 @@ export class LoginPage implements OnInit {
     console.log(credentials);
     try {
       await this.authService.presentLoading();
-      this.authService.login(credentials).subscribe(async (res: any) => {
-        await this.userLocalService.saveNotas(res);
+      this.authService.login(credentials).subscribe(async (res) => {
+       // await this.userLocalService.saveNotas(res.notas);
         await this.userLocalService.saveUser(res);
-        console.log(res);
+        let u = await this.userLocalService.getUser();
+        console.log('usuario leido', u);
         let mod = await this.onModal("sync");
         await mod.present();
         this.authService.onLogin();

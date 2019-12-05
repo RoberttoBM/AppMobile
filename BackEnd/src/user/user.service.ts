@@ -39,5 +39,12 @@ export class UserService {
         let user = this.usuarioRepository.createQueryBuilder('usuario');
     }
 
+    async getNotas(IDPER){
+        return this.usuarioRepository.createQueryBuilder("persona")
+        .innerJoinAndSelect("persona.notas", "notas")
+        .where("persona.IDPER = :IDPER", {IDPER})
+        .getMany();
+    }
+
 
 }

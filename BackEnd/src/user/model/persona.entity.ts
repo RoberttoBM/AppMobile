@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
+import { Notas } from "../../notas/model/notas.entity";
 
 @Entity('PERSONA')
 export class Persona {
@@ -29,6 +30,9 @@ export class Persona {
 
     @Column("varchar2")
     CONTRPER: String;
+
+    @OneToMany(type => Notas, notas => notas.persona)
+    notas: Notas[]; 
 
     
   

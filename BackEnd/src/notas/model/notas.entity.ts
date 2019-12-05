@@ -1,10 +1,11 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm";
+import { Persona } from "../../user/model/persona.entity";
 
 @Entity('INOTAS')
 export class Notas {
 
-    @PrimaryColumn()
-    CODCUR: number
+    @PrimaryColumn({name: "CODCUR"})
+    CODCUR: number;
 
     @Column("number")
     IDPER: number;
@@ -26,5 +27,9 @@ export class Notas {
 
     @Column("number")
     BIMESTRE5: number;
+
+    @ManyToOne(type=> Persona, persona => persona.notas)
+    @JoinColumn({ name: "IDPER" })
+    persona: Persona;
 
 }
