@@ -16,12 +16,10 @@ export class NotasService {
     }
 
     async read(IDPER) {
-        //let notas = await this.NotasRepository.createQueryBuilder("Notas")
         return this.NotasRepository.createQueryBuilder("Notas")
         .innerJoinAndSelect("Notas.IDPER", "IDPER")
         .where("Notas.IDPER = :IDPER", { IDPER })
         .getMany();
-        //return notas;
     }
 
     async getNotas(IDPER){

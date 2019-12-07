@@ -7,7 +7,7 @@ import { Asistencias } from './model/asistencias.entity';
 export class AsistenciasService {
 
     constructor(@InjectRepository(Asistencias) 
-    private AsistenciasRepository: Repository<Asistencias>,
+    private readonly AsistenciasRepository: Repository<Asistencias>,
     ){}
 
     async findAll(){
@@ -18,18 +18,14 @@ export class AsistenciasService {
         let asistencias = this.AsistenciasRepository.createQueryBuilder('Asistencias');
     }
 
-    async read(IDPER: number) {
-        let asistencias = await this.AsistenciasRepository.createQueryBuilder("Asistencias")
-        .where("Asistencias.IDPER = :IDPER", { IDPER })
-        .getOne();
-        return asistencias;
+    async getAsistencias(IDPER){
+        return this.AsistenciasRepository.createQueryBuilder("asistencias")
+        .innerJoin("asistencias.persona", "persona")
+        .where("asistencias.IDPER = :IDPER", {IDPER})
+        .getMany();
     }
 
-    async findByUserName(USUPER: string) {
-        const asistencias = await this.AsistenciasRepository.createQueryBuilder("Asistencias")
-            .where("Asistencias.USUPER = :USUPER", { USUPER })
-            .getOne();
-        return asistencias;
-    } 
-
 }
+
+
+

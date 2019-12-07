@@ -1,26 +1,15 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToMany, JoinColumn, ManyToMany, ManyToOne } from "typeorm";
+import { Persona } from "../../user/model/persona.entity";
 
 @Entity('IASISTENCIAS')
 export class Asistencias {
 
-    @PrimaryColumn()
+    @PrimaryColumn({name: "CODMAT"})
+    CODMAT: number;
+
+    @Column("number")
     IDPER: number;
 
-    @Column("varchar2")
-    NOMBRE: String;
-
-    @Column("varchar2")
-    APELLIDO: String;
-
-    @Column("varchar2")
-    DNIPER: String;
-
-    @Column("varchar2")
-    USUPER: String;
-
-    @Column("varchar2")
-    CONTRPER: String;
-  
     @Column("varchar2")
     ASISTENCIAS: String;
 
@@ -28,9 +17,13 @@ export class Asistencias {
     FALTAS: String;
 
     @Column("varchar2")
-    CABELLOANTIRREGLAMENTARIO: String;
+    CB: String;
 
     @Column("varchar2")
-    MALVESTIDO: String;
+    MV: String;
+
+    @ManyToOne(type => Persona, persona => persona.asistencias)
+    @JoinColumn({ name: "IDPER" })
+    persona: Persona;
 
 }

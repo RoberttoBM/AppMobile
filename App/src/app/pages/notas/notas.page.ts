@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { INotas } from '../../interfaces/INotas';
 import { Network } from '@ionic-native/network/ngx';
 import { ModalController } from '@ionic/angular';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
@@ -14,7 +13,6 @@ import { Notas } from '../../interfaces/IUsuario';
 })
 export class NotasPage implements OnInit {
 
-  //Notas: INotas = { CODCUR: 0, IDPER: 0, NOMCUR: "", BIMESTRE1: 0, BIMESTRE2: 0, BIMESTRE3: 0, BIMESTRE4: 0, BIMESTRE5: 0 }
   Notas: Notas[] = [] 
 
   constructor(

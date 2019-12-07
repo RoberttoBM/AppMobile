@@ -9,6 +9,7 @@ export interface Usuario {
     USUPER: String;
     CONTRPER?: String;
     notas?: Notas[];
+    asistencias?: Asistencias[]; 
 
 
 }
@@ -23,5 +24,16 @@ export interface Notas {
     BIMESTRE3: number;
     BIMESTRE4: number;
     BIMESTRE5: number;
+
+}
+
+export interface Asistencias {
+
+    CODMAT: number;
+    IDPER: number;
+    ASISTENCIAS: String;
+    FALTAS: String;
+    CB: String;
+    MV: String;
 
 }

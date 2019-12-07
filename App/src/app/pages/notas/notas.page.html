@@ -5,24 +5,21 @@
 </ion-header>
 
 <ion-content padding>
+  <img src="../../../assets/cuadernos.png" class="center" />
 
 
-  <ion-list *ngFor="let nota of Notas">
-    <ion-grid>
-      <ion-row>
-        <ion-item>
-          <ion-col>
-            <b>
-              <ion-label>Notas 5:</ion-label>
-            </b>
-          </ion-col>
-          <ion-col>
-            <ion-label>{{nota.BIMESTRE5}}</ion-label>
-          </ion-col>
-        </ion-item>
-      </ion-row>
-    </ion-grid>
+  <footer>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Seleccione un Bimestre:</ion-label>
+      </ion-list-header>
+      <ion-button routerLink="/tabs/b1" expand="block" color="secondary">Bimestre 1 </ion-button>
+      <ion-button routerLink="/tabs/b2" expand="block" color="secondary">Bimestre 2</ion-button>
+      <ion-button routerLink="/tabs/b3" expand="block" color="secondary">Bimestre 3</ion-button>
+      <ion-button routerLink="/tabs/b4" expand="block" color="secondary">Bimestre 4</ion-button>
+      <ion-button routerLink="/tabs/b5" expand="block" color="secondary">Bimestre 5</ion-button>
 
-  </ion-list>
+    </ion-list>
+  </footer>
 
 </ion-content>

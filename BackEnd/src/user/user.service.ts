@@ -46,5 +46,12 @@ export class UserService {
         .getMany();
     }
 
+    async getAsistencias(IDPER){
+        return this.usuarioRepository.createQueryBuilder("persona")
+        .innerJoinAndSelect("persona.asistencias", "asistencias")
+        .where("persona.IDPER = :IDPER", {IDPER})
+        .getMany();
+    }
+
 
 }

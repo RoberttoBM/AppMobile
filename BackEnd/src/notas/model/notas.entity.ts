@@ -28,7 +28,7 @@ export class Notas {
     @Column("number")
     BIMESTRE5: number;
 
-    @ManyToOne(type=> Persona, persona => persona.notas)
+    @ManyToOne(type => Persona, persona => persona.notas)
     @JoinColumn({ name: "IDPER" })
     persona: Persona;
 

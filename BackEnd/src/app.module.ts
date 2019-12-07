@@ -11,9 +11,9 @@ import { HelpModule } from './help/help.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     "type": "oracle",
-    "username": "dbEdooca",
-    "password": "Edooca-2019",
-    "connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=35.184.25.222)(PORT=1521))(CONNECT_DATA=(SID=XE)))",
+    "username": "db_EDOOCA",
+    "password": "db_EDOOCA-2019",
+    "connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=34.69.77.101)(PORT=1521))(CONNECT_DATA=(SID=XE)))",
     "synchronize": false,
     "logging": true,
     "entities": [__dirname + '/**/**.entity{.ts,.js}']

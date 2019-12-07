@@ -1,15 +1,11 @@
 export class AsistenciasDTO {
 
+    CODMAT: number;
     IDPER: number;
-    NOMBRE: String;
-    APELLIDO: String;
-    DNIPER: String;
-    USUPER: String;
-    CONTRPER: String;
     ASISTENCIAS: String;
     FALTAS: String;
-    CABELLOANTIRREGLAMENTARIO: String;
-    MALVESTIDO: String;
+    CB: String;
+    MV: String;
 
 
 

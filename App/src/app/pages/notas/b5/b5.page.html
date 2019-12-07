@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title style="color:rgb(255, 255, 255)">BIMESTRE 5</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let nota of Notas">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-icon name="school"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-label>
+          <div>{{nota.NOMCUR}}</div>
+        </ion-label>
+<!--         <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col> -->
+        <ion-col style="align-self: flex-end;">
+          <div>{{nota.BIMESTRE5}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+
+
+
+</ion-content>

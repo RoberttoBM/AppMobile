@@ -14,6 +14,8 @@ export class NotasController {
     }
 
 
+    
+    //Usamos este llamado para obtener todas las notas del estudiante por parametro de "IDPER"
     @Get('read/:IDPER')
     async getPersona(@Param('IDPER') IDPER: string) {
         return await this.notasService.getNotas(IDPER);

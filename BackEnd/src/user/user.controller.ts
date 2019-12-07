@@ -18,6 +18,11 @@ export class UserController {
         return this.userService.read(parseInt(params.IDPER));
     }
 
+    @Get('asistencias/:IDPER')
+    async getAsistencias(@Param() params) {
+        return this.userService.getAsistencias(parseInt(params.IDPER));
+    }
+
     @Get('notas/:IDPER')
     async getNotas(@Param() params) {
         return this.userService.getNotas(parseInt(params.IDPER));

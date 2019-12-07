@@ -5,7 +5,6 @@ import { ToastService } from '../../services/toast.service';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
-import { INotas } from '../../interfaces/INotas';
 
 @Component({
   selector: 'app-modal-espera',
@@ -16,7 +15,6 @@ export class ModalEsperaPage implements OnInit {
 
   @Input() dato: string;
   private user: Usuario;
-  private notas: INotas
 
   constructor(
     private modalEsperaCtrl: ModalController,

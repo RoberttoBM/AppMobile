@@ -13,9 +13,6 @@ export class ToastService {
   async presentToast(message: string, color: string) {
     const toast = await this.toastCtrl.create({
       color,
-      //showCloseButton: true,
-      //position: 'middle',
-      //closeButtonText: 'Ok',
       animated:true,
       header: 'Usuario y/o contraseña incorrectos',
       message: 'Intente nuevamente por favor...',
@@ -24,6 +21,8 @@ export class ToastService {
     toast.present();
   }
 
+
+  //Mensaje en el modal de espera despúes del login
   async presentToast1(message: string, color: string) {
     const toast = await this.toastCtrl.create({
       color:'primary' ,

@@ -1,13 +1,10 @@
 export interface IAsistencias {
-    IDPER?: number;
-    NOMBRE: String;
-    APELLIDO: String;
-    DNIPER: String;
-    USUPER: String;
-    CONTRPER: String;
+    
+    CODMAT?: number;
+    IDPER: number;
     ASISTENCIAS: String;
     FALTAS: String;
-    CABELLOANTIRREGLAMENTARIO: String;
-    MALVESTIDO: String;
+    CB: String;
+    MV: String;
 
 }

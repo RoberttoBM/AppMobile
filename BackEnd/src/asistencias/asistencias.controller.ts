@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { AsistenciasService } from './asistencias.service';
-import { IAsistencias } from './interfaces/IAsistencias';
 
 @Controller('asistencias')
 export class AsistenciasController {
@@ -15,9 +14,9 @@ export class AsistenciasController {
 
 
     //traer notas del estudiante por parametro
-    @Get('traer/:IDPER')
-    async getPersona(@Param('IDPER') IDPER: string): Promise<IAsistencias> {
-        return await this.asistenciasService.read(parseInt(IDPER));
+    @Get('read/:IDPER')
+    async getAsistencias(@Param('IDPER') IDPER: string) {
+        return await this.asistenciasService.getAsistencias(IDPER);
     }
 
 
