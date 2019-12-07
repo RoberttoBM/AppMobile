@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { B2Page } from './b2.page';
+import { ModalEsperaPageModule } from '../../modal-espera/modal-espera.module';
+import { ModalEsperaPage } from '../../modal-espera/modal-espera.page';
 
 const routes: Routes = [
   {
@@ -19,8 +21,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ModalEsperaPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [B2Page]
+  declarations: [B2Page],
+  entryComponents: [ModalEsperaPage]
 })
 export class B2PageModule {}

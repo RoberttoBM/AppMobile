@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Network } from '@ionic-native/network/ngx';
-import { ModalController } from '@ionic/angular';
+import { ModalController, LoadingController } from '@ionic/angular';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
 import { ModalEsperaPage } from '../modal-espera/modal-espera.page';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
@@ -19,13 +19,15 @@ export class NotasPage implements OnInit {
     private usuarioLocalService: UsuarioLocalService,
     private network: Network,
     private modalCtrl: ModalController,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    public loadingController: LoadingController
 
   ) {
 
 
 
   }
+
 
   async ngOnInit() {
     let user = await this.usuarioLocalService.getUser();
@@ -53,4 +55,9 @@ export class NotasPage implements OnInit {
 
   }
 
+
+
+  
 }
+
+

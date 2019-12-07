@@ -59,17 +59,17 @@ export class LoginPage implements OnInit {
        // await this.userLocalService.saveNotas(res.notas);
         await this.userLocalService.saveUser(res);
         let u = await this.userLocalService.getUser();
-        console.log('usuario leido', u);
+       // console.log('usuario leido', u);
         let mod = await this.onModal("sync");
         await mod.present();
         this.authService.onLogin();
       }, (err) => {
-        console.log(err);
+       // console.log(err);
         this.toastService.presentToast("Usuario y/o contraseña incorrectos", "danger");
       });
     } catch (error) {
-      console.log("Error");
-      console.log(error);
+      //console.log("Error");
+      //console.log(error);
     }
 
   }

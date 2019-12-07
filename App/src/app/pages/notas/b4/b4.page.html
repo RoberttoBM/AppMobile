@@ -1,9 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>b4</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/notas"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="color:rgb(255, 255, 255)">BIMESTRE 4:</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
-
-</ion-content>
+<ion-content padding>
+    <ion-list *ngFor="let nota of Notas">
+  
+      <ion-grid>
+        <ion-buttons>
+          <ion-button>
+            <ion-icon name="school"></ion-icon>
+          </ion-button>
+  
+          <ion-button>
+            {{nota.NOMCUR}}
+          </ion-button>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+  
+          <ion-button slot="end">
+            {{nota.BIMESTRE4}}
+          </ion-button>
+        </ion-buttons>
+      </ion-grid>
+    </ion-list>
+  
+  
+  
+  
+  </ion-content>
