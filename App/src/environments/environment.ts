@@ -9,7 +9,8 @@ export const URL = {
 export const ENTITY = {
   usuario: "usuario",
   notas: "notas",
-  asistencias: "asistencias"
+  asistencias: "asistencias",
+  perfil: "perfil"
 }
 
 export const TOKEN_KEY = 'access_token';

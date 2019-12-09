@@ -31,7 +31,6 @@ export class NotasPage implements OnInit {
 
   async ngOnInit() {
     let user = await this.usuarioLocalService.getUser();
-    //console.log('usuario notas', user)
     this.usuarioService.getNotas(user.IDPER).subscribe(notas=> {
       this.Notas = notas;
       console.log(this.Notas);

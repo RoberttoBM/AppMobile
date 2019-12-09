@@ -10,6 +10,7 @@ export interface Usuario {
     CONTRPER?: String;
     notas?: Notas[];
     asistencias?: Asistencias[]; 
+    perfil?: Perfil[];
 
 
 }
@@ -35,5 +36,21 @@ export interface Asistencias {
     FALTAS: String;
     CB: String;
     MV: String;
+
+}
+
+export interface Perfil{
+
+    IDPER: number;
+    NOMPER: String;
+    APEPER: String;
+    DNIPER: String;
+    FECHNACPER: String;
+    DIRPER: String;
+    GRAAUL: String;
+    SECAUL: String;
+    TUTOR: String;
+    CELULAR: String;
+    CORREO: String;
 
 }

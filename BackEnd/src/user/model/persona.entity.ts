@@ -1,6 +1,7 @@
 import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
 import { Notas } from "../../notas/model/notas.entity";
 import { Asistencias } from "../../asistencias/model/asistencias.entity";
+import { Perfil } from '../../perfil/model/perfil.entity';
 
 @Entity('PERSONA')
 export class Persona {
@@ -37,5 +38,8 @@ export class Persona {
 
     @OneToMany(type => Asistencias , asistencias => asistencias.persona)
     asistencias: Asistencias[];
+
+    @OneToMany(type => Perfil, perfil => perfil.persona)
+    perfil: Perfil[];
   
 }

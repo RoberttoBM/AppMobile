@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController, AlertController } from '@ionic/angular';
 import { ModalEsperaPage } from '../modal-espera/modal-espera.page';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
-import { Usuario } from '../../interfaces/IUsuario';
+import { Usuario, Perfil } from '../../interfaces/IUsuario';
+import { UsuarioService } from '../../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-tab3',
@@ -13,20 +14,17 @@ import { Usuario } from '../../interfaces/IUsuario';
 })
 export class Tab3Page implements OnInit {
   
-  Usuario: Usuario = { IDPER: 0 ,NOMPER: "", APEPER: "", DNIPER: 0, ESTPER: "", TIPPER: "", DIRPER: "", USUPER:"", CONTRPER:""}
-
+Perfil: Perfil[];
 
   constructor(
     private usuarioLocalService: UsuarioLocalService,
+    private usuarioService: UsuarioService,
     private alertController: AlertController,
     private modalCtrl: ModalController,
     private authService: AuthService,
     private network: Network,
     private toastCtrl: ToastController, ) {
-      
-    this.usuarioLocalService.getUser().then(resp => {
-      this.Usuario = resp;
-    });
+
 
   }
 
@@ -39,7 +37,6 @@ export class Tab3Page implements OnInit {
     toast.present();
   }
 
-  ngOnInit() { }
 
 
 
@@ -73,6 +70,14 @@ export class Tab3Page implements OnInit {
       ]
     });
     await alert.present();
+  }
+
+
+  async ngOnInit() {
+    let user = await this.usuarioLocalService.getUser();
+    this.usuarioService.getPerfil(user.IDPER).subscribe(perfil=> {
+      this.Perfil = perfil;
+    });
   }
 
 

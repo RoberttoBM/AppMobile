@@ -37,11 +37,11 @@ export class ModalEsperaPage implements OnInit {
 
   //Una ves logueado guardamos al usuario local y el token
   async sync() {
-    this.user = await this.usuarioLocalService.getUser();
-    const token = await this.authService.getToken();
-    this.toastService.presentToast1("","");
+    //this.user = await this.usuarioLocalService.getUser();
+    //const token = await this.authService.getToken();
+    this.toastService.presentToast1("", "");
     this.salir();
-  
+
   }
 
   //Despues de guardarlo los datos, salimos del gif de espera con un tiempo asignado
