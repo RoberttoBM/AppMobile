@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, ManyToMany, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Persona } from '../../user/model/persona.entity';
 
 @Entity('IPERFIL')

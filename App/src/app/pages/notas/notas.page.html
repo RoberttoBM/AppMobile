@@ -3,26 +3,25 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
       </ion-buttons>
-      <ion-title style="color:rgb(255, 255, 255)">PROMEDIO DE NOTAS:</ion-title>
+      <ion-title style="color:rgb(255, 255, 255)">Promedio de Notas:</ion-title>
     </ion-toolbar>
   </ion-header>
 
-<ion-content padding>
-  <img src="../../../assets/cuadernos.png" class="center" />
-
-
-  <footer>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Seleccione un Bimestre:</ion-label>
-      </ion-list-header>
-      <ion-button routerLink="/tabs/b1" expand="block">Bimestre 1 </ion-button>
-      <ion-button routerLink="/tabs/b2" expand="block" color="tertiary">Bimestre 2</ion-button>
-      <ion-button routerLink="/tabs/b3" expand="block" color="secondary">Bimestre 3</ion-button>
-      <ion-button routerLink="/tabs/b4" expand="block" color="secondary">Bimestre 4</ion-button>
-      <ion-button routerLink="/tabs/b5" expand="block" color="warning">Bimestre 5</ion-button>
-
-    </ion-list>
-  </footer>
-
+<ion-content>
+  <img src="../../../assets/cuadernos.png" class="center" style="height: 50%;" />
 </ion-content>
+
+<footer>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Seleccione un Bimestre:</ion-label>
+    </ion-list-header>
+
+    <ion-button routerLink="/tabs/b1" expand="block" color="secondary">Bimestre 1 </ion-button>
+    <ion-button routerLink="/tabs/b2" expand="block" color="success ">Bimestre 2</ion-button>
+    <ion-button routerLink="/tabs/b3" expand="block" color="warning">Bimestre 3</ion-button>
+    <ion-button routerLink="/tabs/b4" expand="block" color="medium">Bimestre 4</ion-button>
+    <ion-button routerLink="/tabs/b5" expand="block" color="primary">Bimestre 5</ion-button>
+
+  </ion-list>
+</footer>

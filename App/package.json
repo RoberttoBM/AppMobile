@@ -28,6 +28,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "@ionic/storage": "^2.2.0",
+    "cordova": "^9.0.0",
     "cordova-android": "8.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
@@ -41,7 +42,7 @@
     "ng2-validation": "^4.2.0",
     "onesignal-cordova-plugin": "^2.6.0",
     "rxjs": "^6.5.3",
-    "zone.js": "~0.8.29"
+    "zone.js": "^0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",

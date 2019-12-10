@@ -70,7 +70,7 @@ export class AuthService {
         tap(res => {
           this.storage.set(TOKEN_KEY, res['access_token']);
           this.user = this.helper.decodeToken(res['access_token']);
-       //   delete res['access_token'];
+          delete res['access_token'];
           this.loading.dismiss();
         }),
         catchError(async(e) => {

@@ -17,16 +17,14 @@ export class ModalEsperaPage implements OnInit {
   private user: Usuario;
 
   constructor(
-    private modalEsperaCtrl: ModalController,
     public toastService: ToastService,
-    private router: Router,
+    private modalEsperaCtrl: ModalController,
     private authService: AuthService,
     private usuarioLocalService: UsuarioLocalService
 
+
   ) { }
 
-
-  //Al iniciar el modal de espera llevamos a cabo la acción de guardar los datos de logueo local
   ngOnInit() {
     switch (this.dato) {
       case 'sync':
@@ -35,16 +33,14 @@ export class ModalEsperaPage implements OnInit {
     }
   }
 
-  //Una ves logueado guardamos al usuario local y el token
   async sync() {
-    //this.user = await this.usuarioLocalService.getUser();
-    //const token = await this.authService.getToken();
-    this.toastService.presentToast1("", "");
+    this.user = await this.usuarioLocalService.getUser();
+    const token = await this.authService.getToken();
+    this.toastService.presentToast1("","");
     this.salir();
 
   }
 
-  //Despues de guardarlo los datos, salimos del gif de espera con un tiempo asignado
   async salir() {
     setTimeout(async () => {
       await this.modalEsperaCtrl.dismiss();

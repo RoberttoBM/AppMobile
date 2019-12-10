@@ -13,7 +13,7 @@ import { Notas } from '../../interfaces/IUsuario';
 })
 export class NotasPage implements OnInit {
 
-  Notas: Notas[] = [] 
+  Notas: Notas[] = [];
 
   constructor(
     private usuarioLocalService: UsuarioLocalService,
@@ -29,16 +29,16 @@ export class NotasPage implements OnInit {
   }
 
 
-  async ngOnInit() {
-    let user = await this.usuarioLocalService.getUser();
+   ngOnInit() {
+/*     let user = await this.usuarioLocalService.getUser();
     this.usuarioService.getNotas(user.IDPER).subscribe(notas=> {
       this.Notas = notas;
       console.log(this.Notas);
-    });
+    }); */
   }
 
 
-  //Espera para cargar los datos
+/*   // Espera para cargar los datos
   async onModal(dato) {
     let con = this.network.type;
     console.log(con);
@@ -52,11 +52,9 @@ export class NotasPage implements OnInit {
       return await modal.present();
     }
 
-  }
+  } */
 
 
-
-  
 }
 
 

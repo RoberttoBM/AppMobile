@@ -1,87 +1,36 @@
 <ion-header>
     <ion-toolbar color="secondary">
-        <ion-title style="color:rgb(255, 255, 255)">MI PERFIL:</ion-title>
+        <ion-title style="color:rgb(255, 255, 255)">Mi Perfil:</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding="padding">
     <ion-list *ngFor="let perfil of Perfil">
-        <ion-grid>
-
+        <ion-card class="welcome-card">
             <ion-buttons>
-                <ion-button>
-                    <ion-icon name="contact"> </ion-icon>
-                    <b> Estudiante: </b>
-                </ion-button>
-                <ion-button>
-                    {{perfil.NOMPER}} {{perfil.APEPER}}
-                </ion-button>
+                <ion-item>
+                    <ion-col>
+                        <ion-label>
+                            Estudiante: {{perfil.NOMPER}} {{perfil.APEPER}}
+                        </ion-label>
+                    </ion-col>
+                </ion-item>
             </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    DNI:
-                </ion-button>
-                <ion-button>
-                    {{perfil.DNIPER}}
-                </ion-button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    DIRECCIÓN:
-                </ion-button>
-                <ion-button>
-                    {{perfil.DIRPER}}
-                </ion-button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    AULA:
-                </ion-button>
-                <ion-button>
-                    {{perfil.GRAAUL}} - {{perfil.SECAUL}}
-                </ion-button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    TUTOR:
-                </ion-button>
-                <ion-button>
-                    {{perfil.TUTOR}}
-                </ion-button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    CELULAR:
-                </ion-button>
-                <ion-button>
-                    {{perfil.CELULAR}}
-                </ion-button>
-            </ion-buttons>
-
-            <ion-buttons>
-                <ion-button>
-                    EMAIL:
-                </ion-button>
-                <ion-button>
-                    {{perfil.CORREO}}
-                </ion-button>
-            </ion-buttons>
-
-
-        </ion-grid>
+        </ion-card>
     </ion-list>
-
-
 </ion-content>
 
 <footer>
-    <ion-button (click)="showConfirmAlert()" expand="full" color="danger">
+    <ion-button
+        (click)="showConfirmAlert()"
+        expand="full"
+        color="danger"
+    >
         Cerrar Sesión
-        <ion-icon name='ios-log-out' style="margin-left: 30px;"> </ion-icon>
+
+        <ion-icon
+            name="ios-log-out"
+            style="margin-left: 30px;"
+        ></ion-icon>
     </ion-button>
 </footer>

@@ -33,7 +33,7 @@ export class PushService{
     this.oneSignal.endInit();
     this.oneSignal.getIds().then((id) => {
       console.log(id);
-      this.toastService.presentToast(JSON.stringify(id), "success")
+     // this.toastService.presentToast(JSON.stringify(id), "success")
     });
   }
 

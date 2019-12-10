@@ -39,11 +39,11 @@ export class LoginPage implements OnInit {
     return modal;
   }
 
-  ionViewWillEnter() {
+/*   ionViewWillEnter() {
     console.log("Ingresar Usuario y Contraseña");
     this.usuario = "";
     this.password = "";
-  }
+  } */
 
 
   async signIn() {
@@ -56,20 +56,16 @@ export class LoginPage implements OnInit {
     try {
       await this.authService.presentLoading();
       this.authService.login(credentials).subscribe(async (res) => {
-       // await this.userLocalService.saveNotas(res.notas);
         await this.userLocalService.saveUser(res);
-        let u = await this.userLocalService.getUser();
-       // console.log('usuario leido', u);
         let mod = await this.onModal("sync");
         await mod.present();
         this.authService.onLogin();
       }, (err) => {
-       // console.log(err);
         this.toastService.presentToast("Usuario y/o contraseña incorrectos", "danger");
       });
     } catch (error) {
-      //console.log("Error");
-      //console.log(error);
+      console.log("Error");
+      console.log(error);
     }
 
   }
@@ -79,4 +75,3 @@ export class LoginPage implements OnInit {
   }
 
 }
-

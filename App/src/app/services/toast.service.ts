@@ -29,8 +29,8 @@ export class ToastService {
       position: 'bottom',
       header: 'Cargando datos del estudiante',
       message: 'Espere un momento por favor... ',
-      duration: 4500
+      duration: 4000
     });
-    toast.present();
+   toast.present();
   }
 }
