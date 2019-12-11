@@ -58,7 +58,7 @@ export class AuthService {
         }
       }
     });
-  }
+  } 
 
   onLogin(){
     this.authenticationState.next(true);

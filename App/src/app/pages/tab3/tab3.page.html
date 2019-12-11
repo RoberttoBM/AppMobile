@@ -6,21 +6,55 @@
 
 <ion-content padding="padding">
     <ion-list *ngFor="let perfil of Perfil">
-        <ion-card class="welcome-card">
-            <ion-buttons>
-                <ion-item>
-                    <ion-col>
-                        <ion-label>
-                            Estudiante: {{perfil.NOMPER}} {{perfil.APEPER}}
-                        </ion-label>
-                    </ion-col>
+        <ion-item-group>          
+            <ion-label>
+                    <ion-icon name="person" slot="start"></ion-icon>
+                    &nbsp; <b>Estudiante:</b>
+                &nbsp; {{perfil.NOMPER}} {{perfil.APEPER}}
+            </ion-label>
+        </ion-item-group>
+<br>
+        <ion-item-group>          
+                <ion-label>
+                        <ion-icon name="card" slot="start"></ion-icon>
+                        &nbsp; <b>DNI:</b>
+                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{perfil.DNIPER}}
+                </ion-label>
+            </ion-item-group>
+
+            <br>
+            <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="../../../assets/blackboard.png">
+                    </ion-avatar>
+            
+                    <ion-label>
+                        Aula:      
+                        <p>{{perfil.GRAAUL}} - {{perfil.SECAUL}}</p>
+                    </ion-label>
                 </ion-item>
-            </ion-buttons>
-        </ion-card>
     </ion-list>
 </ion-content>
 
 <footer>
+    <ion-item *ngFor="let perfil of Perfil">
+        <ion-avatar slot="start">
+            <img src="../../../assets/arian.png">
+        </ion-avatar>
+
+        <ion-label>
+            Tutor:
+
+            <p>{{perfil.TUTOR}}</p>
+
+            <p>📱 {{perfil.CELULAR}}</p>
+
+            <ion-note>
+                <h6>📧 {{perfil.CORREO}}</h6>
+            </ion-note>
+        </ion-label>
+    </ion-item>
+
     <ion-button
         (click)="showConfirmAlert()"
         expand="full"

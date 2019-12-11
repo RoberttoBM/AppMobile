@@ -39,12 +39,6 @@ export class LoginPage implements OnInit {
     return modal;
   }
 
-/*   ionViewWillEnter() {
-    console.log("Ingresar Usuario y Contraseña");
-    this.usuario = "";
-    this.password = "";
-  } */
-
 
   async signIn() {
 
@@ -52,7 +46,7 @@ export class LoginPage implements OnInit {
       username: this.usuario,
       password: this.password
     }
-    console.log(credentials);
+
     try {
       await this.authService.presentLoading();
       this.authService.login(credentials).subscribe(async (res) => {

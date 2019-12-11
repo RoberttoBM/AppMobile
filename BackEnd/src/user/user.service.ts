@@ -22,10 +22,10 @@ export class UserService {
         return persona;
     }
 
-    async create(persona: PersonaDto) {
+/*     async create(persona: PersonaDto) {
         let user = this.usuarioRepository.create(persona);
         return this.usuarioRepository.save(user);
-    }
+    } */
 
 
     async findByUserName(USUPER: string) {
@@ -35,7 +35,7 @@ export class UserService {
         return userName;
     } 
     
-    async query(IDPER: number) {
+/*     async query(IDPER: number) {
         let user = this.usuarioRepository.createQueryBuilder('usuario');
     }
 
@@ -51,7 +51,7 @@ export class UserService {
         .innerJoinAndSelect("persona.asistencias", "asistencias")
         .where("persona.IDPER = :IDPER", {IDPER})
         .getMany();
-    }
+    } */
 
 
 }

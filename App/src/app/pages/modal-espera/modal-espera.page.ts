@@ -4,7 +4,6 @@ import { ModalController } from '@ionic/angular';
 import { ToastService } from '../../services/toast.service';
 import { UsuarioLocalService } from '../../services/usuario/usuario-local.service';
 import { AuthService } from '../../services/auth/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-espera',
@@ -14,13 +13,11 @@ import { Router } from '@angular/router';
 export class ModalEsperaPage implements OnInit {
 
   @Input() dato: string;
-  private user: Usuario;
 
   constructor(
     public toastService: ToastService,
     private modalEsperaCtrl: ModalController,
-    private authService: AuthService,
-    private usuarioLocalService: UsuarioLocalService
+
 
 
   ) { }
@@ -34,8 +31,6 @@ export class ModalEsperaPage implements OnInit {
   }
 
   async sync() {
-    this.user = await this.usuarioLocalService.getUser();
-    const token = await this.authService.getToken();
     this.toastService.presentToast1("","");
     this.salir();
 

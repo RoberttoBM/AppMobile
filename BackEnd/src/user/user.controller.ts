@@ -17,7 +17,7 @@ export class UserController {
     async getPersona(@Param() params) {
         return this.userService.read(parseInt(params.IDPER));
     }
-
+/* 
     @Get('asistencias/:IDPER')
     async getAsistencias(@Param() params) {
         return this.userService.getAsistencias(parseInt(params.IDPER));
@@ -33,7 +33,7 @@ export class UserController {
     @Post('crear/:IDPER')
     async create(@Body() data: PersonaDto) {
         return this.userService.create(data);
-    }
+    } */
 
 
 }
