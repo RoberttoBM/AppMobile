@@ -50,8 +50,6 @@ export class AsistenciasPage implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      //header: 'ASISTENCIAS INAPROPIADAS:',
-      //subHeader: '',
       message: 'Si el(la) estudiante asiste tarde o no cumple con los reglamentos al llegar a la Institución se considerará como una Asistencia Inadecuada',
       buttons: ['OK']
     });

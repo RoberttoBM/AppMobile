@@ -6,22 +6,27 @@
 
 <ion-content padding="padding">
     <ion-list *ngFor="let perfil of Perfil">
-        <ion-item-group>          
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="../../../assets/graduate.png">
+            </ion-avatar>
+    
             <ion-label>
-                    <ion-icon name="person" slot="start"></ion-icon>
-                    &nbsp; <b>Estudiante:</b>
-                &nbsp; {{perfil.NOMPER}} {{perfil.APEPER}}
+                Estudiante:      
+                <p>{{perfil.NOMPER}} - {{perfil.APEPER}}</p>
             </ion-label>
-        </ion-item-group>
+        </ion-item>
 <br>
-        <ion-item-group>          
-                <ion-label>
-                        <ion-icon name="card" slot="start"></ion-icon>
-                        &nbsp; <b>DNI:</b>
-                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{perfil.DNIPER}}
-                </ion-label>
-            </ion-item-group>
+<ion-item>
+    <ion-avatar slot="start">
+        <img src="../../../assets/id-card.png">
+    </ion-avatar>
 
+    <ion-label>
+        DNI:      
+        <p>{{perfil.DNIPER}}</p>
+    </ion-label>
+</ion-item>
             <br>
             <ion-item>
                     <ion-avatar slot="start">
